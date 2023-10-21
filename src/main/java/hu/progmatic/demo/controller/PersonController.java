@@ -40,16 +40,16 @@ public class PersonController {
         entityService.deletePersonById(id);
         return "redirect:/home";
     }
-    @GetMapping("/edit/{id}")
-    public  String editPerson(Model model, @PathVariable("id") Integer id){
+    @GetMapping("/update/{id}")
+    public  String updatePerson(Model model, @PathVariable("id") Integer id){
         model.addAttribute("person",entityService.getPersonById(id));
-        model.addAttribute("post_url", "/edit/"+ id);
-        return "person_form";
+        model.addAttribute("post_url", "/update/"+ id);
+        return "person_update";
     }
-    @PostMapping ("/edit/{id}")
-    public  String editPerson(@ModelAttribute("person")Person person){
+    @PostMapping ("/update/{id}")
+    public  String updatePerson(@ModelAttribute("person")Person person){
         entityService.updatePerson(person);
-        return  "redirect:/person";
+        return  "redirect:/person/"+person.getId();
     }
 
 
