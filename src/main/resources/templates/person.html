@@ -15,7 +15,7 @@
 </ul>
 
 <a th:href="@{'/orders/new/' + ${person.id}}">
-  <p>New Expense</p>
+  <p>New Orders</p>
 </a>
 <form th:action="@{'/person/delete/' + ${person.id}}" method="post">
   <input type="hidden" name="_method" value="delete" />
