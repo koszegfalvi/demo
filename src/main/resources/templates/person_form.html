@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{/person/add}">
+  <label for="name">Name</label>
+  <input type="text" id="name" placeholder="Name" th:field="*{person.name}">
+  <input type="text" id="birthPlace" placeholder="Birth Place" th:field="*{person.birthPlace}">
+  <input type="date" id="birthDate" placeholder="Birth Date" th:field="*{person.birthDate}">
+  <input type="text" id="email" placeholder="email" th:field="*{person.email}">
+  <button type="submit">OK</button>
+</form>
+</body>
+</html>

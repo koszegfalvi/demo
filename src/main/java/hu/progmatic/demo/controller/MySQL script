@@ -1,0 +1,36 @@
+create database person_order;
+drop database person_order;
+use person_order;
+
+create table person(
+id int primary key auto_increment,
+name varchar(30),
+birth_place varchar(20),
+birth_date date,
+email varchar(30)
+);
+
+create table orders (
+id int primary key auto_increment,
+place varchar(30),
+product varchar(30),
+amount int ,
+person_id int,
+foreign key(person_id) references person(id)
+);
+
+
+insert into person (name,birth_place,birth_date,email) values
+  ('Kovács Péter', 'Budapest', '1985-05-20', 'kovacs.peter@example.com'),
+    ('Szabó Anna',  'Debrecen', '1990-12-15', 'szabo.anna@example.com'),
+    ('Horváth Gábor',  'Szeged', '1988-07-10',  'horvath.gabor@example.com'),
+    ('Nagy Eszter', 'Miskolc', '1995-03-25', 'nagy.eszter@example.com'),
+    (' TóthMáté',  'Szombathely', '1982-09-08', 'toth.mate@example.com');
+
+ insert into orders(place, product, amount, person_id) values
+ ('Spar','tej', 300, 1),
+ ('Lidl','kenyér', 700, 2),
+ ('Aldi', 'krumpli', 300, 3),
+ ('Penny', 'sajt', 300, 4),
+ ('Metro', 'hús', 3000, 5);
+

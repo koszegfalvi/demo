@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1 th:text="${person.id}"></h1>
+<h1 th:text="${person.name}"></h1>
+<h1 th:text="${person.birthPlace}"></h1>
+<h1 th:text="${person.birthDate}"></h1>
+<h1 th:text="${person.email}"></h1>
+<ul>
+  <li th:each="orders : ${orders}" th:text="${orders}"></li>
+</ul>
+
+<a th:href="@{'/orders/new/' + ${person.id}}">
+  <p>New Expense</p>
+</a>
+<form th:action="@{'/person/delete/' + ${person.id}}" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <button type="submit">Delete</button>
+</form>
+</body>
+</html>
