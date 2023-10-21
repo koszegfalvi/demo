@@ -8,6 +8,7 @@
 <form method="post" th:action="@{'/orders/add/' + ${personId}}">
   <label for="where">Name</label>
   <input type="text" id="where" placeholder="Where" th:field="*{orders.where}">
+    <input type="text" id="product" placeholder="Product" th:field="*{orders.product}">
   <input type="number" id="amount"  placeholder="Amount" th:field="*{orders.amount}">
   <button type="submit">OK</button>
 </form>

@@ -20,7 +20,8 @@ public class OrdersController {
 
         return "orders_form";
     }
-    @PostMapping("/add")
+
+    @PostMapping("/add/{person_id}")
     public  String createOrders(@ModelAttribute("orders")Orders orders, @PathVariable("person_id")Integer personId){
         orders.setOwner(entityService.getPersonById(personId));
         entityService.saveOrders(orders);

@@ -19,8 +19,9 @@ public class Orders {
     @Column(name = "place")
     private  String where;
     private Integer amount;
+    private String product;
     @ManyToOne
-    @JoinColumn(name = "people_id")
+    @JoinColumn(name = "person_id")
     @JsonBackReference
-    private Person owner;
+   private Person owner;
 }

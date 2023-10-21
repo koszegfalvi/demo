@@ -15,7 +15,7 @@ import java.util.List;
 public class EntityService {
     private PersonRepo personRepo;
     private OrdersRepo ordersRepo;
-
+@Transactional
     public List<Person> getAllPerson() {
         return personRepo.findAll();
     }
